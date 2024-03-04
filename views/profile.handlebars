@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Blogpost:</h3>
+
+    <form class="form new-blogpost-form">
+      <div class="form-group">
+        <label for="blogpost-name">blogpost name:</label>
+        <input class="form-input" type="text" id="blogpost-name" name="blogpost-name" />
+      </div>
+      <div class="form-group">
+        <label for="blogpost-funding">needed funding ($):</label>
+        <input class="form-input" type="number" id="blogpost-funding" name="blogpost-funding" />
+      </div>
+      <div class="form-group">
+        <label for="blogpost-desc">description:</label>
+        <textarea class="form-input" id="blogpost-desc" name="blogpost-desc"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Create</button>
+      </div>
+    </form>
+  </div>
+
+  {{#if blogposts.length}}
+  <div class="col-md-6 blogpost-list">
+    <h3>Current blogposts:</h3>
+
+    {{#each blogposts as |blogpost|}}
+    <div class="row mb-2">
+      <div class="col-md-8">
+        <h4><a href="/blogpost/{{blogpost.id}}">{{blogpost.name}}</a></h4>
+      </div>
+      <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{blogpost.id}}">DELETE</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+</div>
+
+<script src="./js/profile.js"></script>
