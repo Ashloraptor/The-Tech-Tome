@@ -59,6 +59,7 @@ router.get('/profile', withAuth, async (req, res) => {
       });
   
       const user = userData.get({ plain: true });
+      console.log(user);
   
       res.render('profile', {
         ...user,
@@ -67,6 +68,33 @@ router.get('/profile', withAuth, async (req, res) => {
     } catch (err) {
       res.status(500).json(err);
     }
+
+    // try {
+    //   // Get all blog posts and JOIN with user data
+    //   const blogpostData = await BlogPost.findAll({
+    //     where: {
+    //       user_id: req.session.user_id
+    //     },
+    //     include: [
+    //       {
+    //         model: User,
+    //         attributes: ['name'],
+    //       },
+    //     ],
+    //   });
+      
+  //   // Serialize data so the template can read it
+  //   const blogpost = blogpostData.map((blogpost) => blogpost.get({ plain: true }));
+
+  //   // Pass serialized data and session flag into template
+  //   res.render('profile', { 
+  //     blogpost, 
+  //     logged_in: req.session.logged_in 
+  //   });
+  // } catch (err) {
+  //   res.status(500).json(err);
+  // }
+  
   });
 
   

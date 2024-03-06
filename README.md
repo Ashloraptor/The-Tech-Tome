@@ -1,2 +1,3 @@
 # The-Tech-Tome
-AS A developer who writes about tech I WANT a CMS-style blog site SO THAT I can publish articles, blog posts, and my thoughts and opinions
+
+This is a blog allowing a user to create a simple blog post after signing in, with the goal of freeform documentation on a journey to learning and practicing technology, which can be done in the form of articles, blog posts, or opinion pieces.  
